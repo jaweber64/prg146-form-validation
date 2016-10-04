@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-pink.css">
+    <link rel="stylesheet" href="mystyles.css">
+</head>
+
+<body class="w3-theme-light">
+<div id="container" class="w3-panel w3-round-xlarge mybdr w3-dark-grey">
+    <header class="w3-panel w3-round head" >
+        <h1>Javascript Form Validation</h1>
+    </header>
+
+    <div class="w3-card-8 w3-white w3-margin constrain">
+        <div class="w3-container w3-theme-l1">
+            <h2>Personal Information</h2>
+        </div>
+
+        <div class="w3-row">
+            <div class="w3-twothird">
+                <form class="w3-container" action="#" id="mydataform">
+
+                    <div class="w3-row">
+                        <div class="w3-half">
+                            <label class="w3-label"><b>* First Name</b>
+                                <input class="w3-input w3-border w3-theme-light" name="first" id="first" required
+                                       type="text" onblur ="checkOthers()"></label>
+                        </div>
+                        <div class="w3-half">
+                            <label class="w3-label myMargin"><b>* Last Name</b>
+                                <input class="w3-input w3-border w3-theme-light myMargin" name="last" id="last" required
+                                       type="text" onblur ="checkOthers()"></label>
+                        </div>
+                    </div>
+
+                    <div class="w3-row">
+                        <label class="w3-label"><b>Address</b>
+                            <input class="w3-input w3-border w3-theme-light" name="address" id="address"
+                                   type="text" onblur ="checkOthers()"></label>
+                    </div>
+
+                    <div class="w3-row">
+                        <div class="w3-third">
+                            <label class="w3-label"><b>City</b>
+                                <input class="w3-input w3-border w3-theme-light" name="city" id="city"
+                                       type="text" onblur ="checkOthers()"></label>
+                        </div>
+                        <div class="w3-third">
+                            <label class="w3-label myMargin"><b>State</b>
+                                <input class="w3-input w3-border w3-theme-light myMargin" name="state" id="state"
+                                       type="text" onblur ="checkOthers()"></label>
+                        </div>
+                        <div class="w3-third">
+                            <label class="w3-label moreMargin"><b>Zip Code</b>
+                                <input class="w3-input w3-border w3-theme-light moreMargin" name="zip" id="zip"
+                                       type="text" onblur="checkZip()"></label>
+                        </div>
+                    </div>
+
+                    <div class="w3-row">
+                        <div class="w3-half">
+                            <label class="w3-label"><b>Phone</b>
+                                <input class="w3-input w3-border w3-theme-light" name="phone" id="phone"
+                                       type="text" placeholder="###-###-####" onblur="checkPhone()"></label>
+                        </div>
+                        <div class="w3-half">
+                            <label class="w3-label myMargin"><b>* Mobile</b>
+                                <input class="w3-input w3-border w3-theme-light myMargin" name="mobile" id="mobile" required
+                                       type="text" placeholder="###-###-####" onblur="checkMobile()"></label>
+                        </div>
+                    </div>
+
+
+                    <label class="w3-label"><b>* Email Address</b>
+                            <input class="w3-input w3-border w3-theme-light" name="emailAddr" id="emailAddr" required
+                                   type="text" onblur="checkEmail()"></label>
+
+                    <label class="w3-label"><b>Optional: Additional email</b>
+                        <input class="w3-input w3-border w3-theme-light" name="emailAddrOpt" id="emailAddrOpt"
+                               type="text" onblur="checkOthers()"></label>
+
+
+                    <button class="w3-btn w3-theme-l1 w3-margin-bottom w3-margin-top" type="submit" onclick="processInput()"
+                                onkeypress="return noenter()">Submit</button>
+<!--
+                        <input class="w3-btn w3-theme-l1 myMargin" type="submit"  id="submit" onclick="processInput()"
+                                   onkeypress="return noenter()"> -->
+
+                </form>
+            </div>
+
+            <div class="w3-third w3-padding">
+                <p id = "errorMsg">&nbsp;</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="newvalidate.js"></script>
+</body>
+</html>
